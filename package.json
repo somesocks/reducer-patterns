@@ -1,13 +1,9 @@
 {
   "name": "reducer-patterns",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A collection of helpers for building reducer functions (usable for Redux, Array().reduce, or any other reducing code)",
   "main": "./index.js",
   "scripts": {
-    "cmd-build-docs": "(find ./src -name *.js | sort -t/ -k2.2 -k2.1 | xargs jsdoc2md --separators --param-list-format list --property-list-format list --member-index-format list --template README.hbs --files) > README.md",
-    "cmd-build-src": "rsync --update --recursive --delete ./src/ ./dist",
-    "cmd-test-cases": "find ./dist -name '*mocha.tests.js' | xargs mocha --timeout 10000",
-    "cmd-test-eslint": "find ./dist -name '*.js' | xargs eslint --quiet"
   },
   "repository": {
     "type": "git",
