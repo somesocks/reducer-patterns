@@ -34,12 +34,15 @@ function defaultAction(state, action) {
 *    })
 *  );
 *
+*
+*  // prints action1 result { a: 2, b: 2 }
 *  // action1 triggers a state update, since it has the correct type
 *  console.log(
 *    'action1 result',
 *    reducer(state, action1)
 *  );
 *
+*  // prints action2 result { a: 1, b: 2 }
 *  // action2 is ignored, since it has the wrong type
 *  console.log(
 *    'action2 result',
