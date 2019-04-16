@@ -10,6 +10,7 @@
     * [.InitState(initializer)](#reducer-patterns.InitState) ⇒ <code>taskFunction</code>
     * [.PostprocessState(reducer, postprocessor)](#reducer-patterns.PostprocessState) ⇒ <code>function</code>
     * [.SeriesReducer(...reducers)](#reducer-patterns.SeriesReducer) ⇒ <code>function</code>
+    * [.SwitchReducer(...reducers)](#reducer-patterns.SwitchReducer) ⇒ <code>function</code>
 
 
 * * *
@@ -110,6 +111,20 @@ PostprocessState
 ```
 SeriesReducer accepts any  number of reducers,
 and builds a new reducer that chains them together in series
+
+**Kind**: static method of [<code>reducer-patterns</code>](#reducer-patterns)  
+**Params**
+
+- ...reducers <code>function</code> - all reducers.
+
+
+* * *
+
+<a name="reducer-patterns.SwitchReducer"></a>
+
+### reducer-patterns.SwitchReducer(...reducers) ⇒ <code>function</code>
+```javascript
+```
 
 **Kind**: static method of [<code>reducer-patterns</code>](#reducer-patterns)  
 **Params**
