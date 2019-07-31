@@ -1,10 +1,6 @@
+"use strict";
 /* eslint-env mocha */
-
-const SeriesReducer = require('./SeriesReducer');
-
-describe(
-	'reducer-patterns/SeriesReducer',
-	() => {
-		it('can import', () => {});
-	}
-);
+Object.defineProperty(exports, "__esModule", { value: true });
+describe('reducer-patterns/SeriesReducer', function () {
+    it('can import', function () { });
+});

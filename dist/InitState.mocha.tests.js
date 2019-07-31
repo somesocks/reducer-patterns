@@ -1,10 +1,5 @@
-/* eslint-env mocha */
-
-const InitState = require('./InitState');
-
-describe(
-	'reducer-patterns/InitState',
-	() => {
-		it('can import', () => {});
-	}
-);
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+describe('reducer-patterns/InitState', function () {
+    it('can import', function () { });
+});

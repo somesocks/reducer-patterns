@@ -1,4 +1,4 @@
-"use strict";
+
 /**
 * ```javascript
 * ```
@@ -6,11 +6,12 @@
 * and builds an initial state if none exists
 * @param {function} initializer - a condition task.
 * @returns {taskFunction}
-* @memberof reducer-patterns
+* @memberof reducer-patterns.async
 */
 function InitState(initializer) {
-    return function _initStateInstance(state, action) {
-        return state == null ? initializer(action) : state;
-    };
+	return async function _initStateInstance(state, action) {
+		return state == null ? await initializer(action) : state;
+	};
 }
-module.exports = InitState;
+
+export = InitState;

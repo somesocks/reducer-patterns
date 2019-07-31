@@ -1,4 +1,4 @@
-"use strict";
+
 /**
 * ```javascript
 * ```
@@ -6,12 +6,13 @@
 * @param {function} reducer - the reducer to wrap around.
 * @param {function} postprocessor - the postprocessor function to call after the reducer.
 * @returns {function}
-* @memberof reducer-patterns
+* @memberof reducer-patterns.async
 */
 function PostprocessState(reducer, postprocessor) {
-    return function _postprocessStateInstance(state, action) {
-        var newState = reducer(state, action);
-        return postprocessor(newState, state);
-    };
+	return async function _postprocessStateInstance(state, action) {
+		const newState = await reducer(state, action);
+		return await postprocessor(newState, state);
+	};
 }
-module.exports = PostprocessState;
+
+export = PostprocessState;

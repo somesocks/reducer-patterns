@@ -1,5 +1,5 @@
 
-function defaultCondition() {
+function defaultCondition(state, action) {
 	return true;
 }
 
@@ -67,4 +67,4 @@ function ConditionalReducer(
 	};
 }
 
-module.exports = ConditionalReducer;
+export = ConditionalReducer;

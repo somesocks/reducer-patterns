@@ -6,18 +6,18 @@
 * and builds a new reducer that chains them together in series
 * @param {...function} reducers - all reducers.
 * @returns {function}
-* @memberof reducer-patterns
+* @memberof reducer-patterns.async
 */
 function SeriesReducer(...reducers) {
-	return function _seriesReducerInstance(state, action) {
+	return async function _seriesReducerInstance(state, action) {
 		let newState = state;
 
 		for (let i = 0; i < reducers.length; i++) {
-			newState = reducers[i](newState, action);
+			newState = await reducers[i](newState, action);
 		}
 
 		return newState;
 	};
 }
 
-module.exports = SeriesReducer;
+export = SeriesReducer;

@@ -1,10 +1,6 @@
+"use strict";
 /* eslint-env mocha */
-
-const SwitchReducer = require('./SwitchReducer');
-
-describe(
-	'reducer-patterns/SwitchReducer',
-	() => {
-		it('can import', () => {});
-	}
-);
+Object.defineProperty(exports, "__esModule", { value: true });
+describe('reducer-patterns/SwitchReducer', function () {
+    it('can import', function () { });
+});

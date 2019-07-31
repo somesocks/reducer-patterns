@@ -22,17 +22,8 @@ help:
 
 ##		make build - build the src and the docs
 ##
-build: build-src build-docs build-meta
-
-
-build-src:
-	sh $(TASKS)/build-src.sh
-
-build-docs:
-	sh $(TASKS)/build-docs.sh
-
-build-meta: build-src build-docs
-	sh $(TASKS)/build-meta.sh
+build:
+	bash $(TASKS)/build.bash
 
 ##
 

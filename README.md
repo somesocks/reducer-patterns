@@ -6,11 +6,151 @@
 **Kind**: global namespace  
 
 * [reducer-patterns](#reducer-patterns) : <code>object</code>
+    * [.async](#reducer-patterns.async) : <code>object</code>
+        * [.ConditionalReducer(condition, onTrue, onFalse)](#reducer-patterns.async.ConditionalReducer) ⇒ <code>function</code>
+        * [.InitState(initializer)](#reducer-patterns.async.InitState) ⇒ <code>taskFunction</code>
+        * [.PostprocessState(reducer, postprocessor)](#reducer-patterns.async.PostprocessState) ⇒ <code>function</code>
+        * [.SeriesReducer(...reducers)](#reducer-patterns.async.SeriesReducer) ⇒ <code>function</code>
+        * [.SwitchReducer(...reducers)](#reducer-patterns.async.SwitchReducer) ⇒ <code>function</code>
     * [.ConditionalReducer(condition, onTrue, onFalse)](#reducer-patterns.ConditionalReducer) ⇒ <code>function</code>
     * [.InitState(initializer)](#reducer-patterns.InitState) ⇒ <code>taskFunction</code>
     * [.PostprocessState(reducer, postprocessor)](#reducer-patterns.PostprocessState) ⇒ <code>function</code>
     * [.SeriesReducer(...reducers)](#reducer-patterns.SeriesReducer) ⇒ <code>function</code>
     * [.SwitchReducer(...reducers)](#reducer-patterns.SwitchReducer) ⇒ <code>function</code>
+
+
+* * *
+
+<a name="reducer-patterns.async"></a>
+
+### reducer-patterns.async : <code>object</code>
+**Kind**: static namespace of [<code>reducer-patterns</code>](#reducer-patterns)  
+
+* [.async](#reducer-patterns.async) : <code>object</code>
+    * [.ConditionalReducer(condition, onTrue, onFalse)](#reducer-patterns.async.ConditionalReducer) ⇒ <code>function</code>
+    * [.InitState(initializer)](#reducer-patterns.async.InitState) ⇒ <code>taskFunction</code>
+    * [.PostprocessState(reducer, postprocessor)](#reducer-patterns.async.PostprocessState) ⇒ <code>function</code>
+    * [.SeriesReducer(...reducers)](#reducer-patterns.async.SeriesReducer) ⇒ <code>function</code>
+    * [.SwitchReducer(...reducers)](#reducer-patterns.async.SwitchReducer) ⇒ <code>function</code>
+
+
+* * *
+
+<a name="reducer-patterns.async.ConditionalReducer"></a>
+
+#### async.ConditionalReducer(condition, onTrue, onFalse) ⇒ <code>function</code>
+```javascript
+ let ConditionalReducer = require('reducer-patterns/async/ConditionalReducer');
+
+ let state = {
+   a: 1,
+   b: 2,
+ };
+
+ let action1 = {
+   type: 'a',
+   payload: 2,
+ };
+
+ let action2 = {
+   type: 'b',
+   payload: 2,
+ };
+
+ let reducer = ConditionalReducer(
+   (state, action) => action.type === 'a',
+   (state, action) => ({
+     ...state,
+     a: action.payload,
+   })
+ );
+
+
+ // prints action1 result { a: 2, b: 2 }
+ // action1 triggers a state update, since it has the correct type
+ console.log(
+   'action1 result',
+   reducer(state, action1)
+ );
+
+ // prints action2 result { a: 1, b: 2 }
+ // action2 is ignored, since it has the wrong type
+ console.log(
+   'action2 result',
+   reducer(state, action2)
+ );
+
+```
+ConditionalReducer
+
+**Kind**: static method of [<code>async</code>](#reducer-patterns.async)  
+**Params**
+
+- condition <code>function</code> - a condition task.
+- onTrue <code>function</code> - reducer to run if true.
+- onFalse <code>function</code> - reducer to run if false.
+
+
+* * *
+
+<a name="reducer-patterns.async.InitState"></a>
+
+#### async.InitState(initializer) ⇒ <code>taskFunction</code>
+```javascript
+```
+InitState accepts an initializer function/value,
+and builds an initial state if none exists
+
+**Kind**: static method of [<code>async</code>](#reducer-patterns.async)  
+**Params**
+
+- initializer <code>function</code> - a condition task.
+
+
+* * *
+
+<a name="reducer-patterns.async.PostprocessState"></a>
+
+#### async.PostprocessState(reducer, postprocessor) ⇒ <code>function</code>
+```javascript
+```
+PostprocessState
+
+**Kind**: static method of [<code>async</code>](#reducer-patterns.async)  
+**Params**
+
+- reducer <code>function</code> - the reducer to wrap around.
+- postprocessor <code>function</code> - the postprocessor function to call after the reducer.
+
+
+* * *
+
+<a name="reducer-patterns.async.SeriesReducer"></a>
+
+#### async.SeriesReducer(...reducers) ⇒ <code>function</code>
+```javascript
+```
+SeriesReducer accepts any  number of reducers,
+and builds a new reducer that chains them together in series
+
+**Kind**: static method of [<code>async</code>](#reducer-patterns.async)  
+**Params**
+
+- ...reducers <code>function</code> - all reducers.
+
+
+* * *
+
+<a name="reducer-patterns.async.SwitchReducer"></a>
+
+#### async.SwitchReducer(...reducers) ⇒ <code>function</code>
+```javascript
+```
+
+**Kind**: static method of [<code>async</code>](#reducer-patterns.async)  
+**Params**
+
+- ...reducers <code>function</code> - all reducers.
 
 
 * * *

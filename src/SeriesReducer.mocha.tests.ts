@@ -1,9 +1,9 @@
 /* eslint-env mocha */
 
-const InitState = require('./InitState');
+import SeriesReducer from './SeriesReducer';
 
 describe(
-	'reducer-patterns/InitState',
+	'reducer-patterns/SeriesReducer',
 	() => {
 		it('can import', () => {});
 	}

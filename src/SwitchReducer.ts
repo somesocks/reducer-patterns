@@ -30,4 +30,4 @@ function SwitchReducer(...reducers) {
 	};
 }
 
-module.exports = SwitchReducer;
+export = SwitchReducer;

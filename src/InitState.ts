@@ -14,4 +14,4 @@ function InitState(initializer) {
 	};
 }
 
-module.exports = InitState;
+export = InitState;

@@ -1,6 +1,6 @@
 /* eslint-env mocha */
 
-const PostprocessState = require('./PostprocessState');
+import PostprocessState from './PostprocessState';
 
 describe(
 	'reducer-patterns/PostprocessState',

@@ -1,10 +1,6 @@
+"use strict";
 /* eslint-env mocha */
-
-const ConditionalReducer = require('./ConditionalReducer');
-
-describe(
-	'reducer-patterns/ConditionalReducer',
-	() => {
-		it('can import', () => {});
-	}
-);
+Object.defineProperty(exports, "__esModule", { value: true });
+describe('reducer-patterns/ConditionalReducer', function () {
+    it('can import', function () { });
+});

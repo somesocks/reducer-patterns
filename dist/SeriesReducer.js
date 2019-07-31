@@ -1,4 +1,4 @@
-
+"use strict";
 /**
 * ```javascript
 * ```
@@ -8,16 +8,17 @@
 * @returns {function}
 * @memberof reducer-patterns
 */
-function SeriesReducer(...reducers) {
-	return function _seriesReducerInstance(state, action) {
-		let newState = state;
-
-		for (let i = 0; i < reducers.length; i++) {
-			newState = reducers[i](newState, action);
-		}
-
-		return newState;
-	};
+function SeriesReducer() {
+    var reducers = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        reducers[_i] = arguments[_i];
+    }
+    return function _seriesReducerInstance(state, action) {
+        var newState = state;
+        for (var i = 0; i < reducers.length; i++) {
+            newState = reducers[i](newState, action);
+        }
+        return newState;
+    };
 }
-
 module.exports = SeriesReducer;

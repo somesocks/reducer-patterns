@@ -1,6 +1,6 @@
 /* eslint-env mocha */
 
-const SwitchReducer = require('./SwitchReducer');
+import SwitchReducer from './SwitchReducer';
 
 describe(
 	'reducer-patterns/SwitchReducer',

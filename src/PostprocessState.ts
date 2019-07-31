@@ -15,4 +15,4 @@ function PostprocessState(reducer, postprocessor) {
 	};
 }
 
-module.exports = PostprocessState;
+export = PostprocessState;

@@ -1,4 +1,3 @@
-"use strict";
 /**
 * ```javascript
 * ```
@@ -8,9 +7,5 @@
 * @returns {taskFunction}
 * @memberof reducer-patterns
 */
-function InitState(initializer) {
-    return function _initStateInstance(state, action) {
-        return state == null ? initializer(action) : state;
-    };
-}
-module.exports = InitState;
+declare function InitState(initializer: any): (state: any, action: any) => any;
+export = InitState;

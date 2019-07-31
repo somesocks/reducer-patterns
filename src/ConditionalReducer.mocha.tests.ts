@@ -1,6 +1,6 @@
 /* eslint-env mocha */
 
-const ConditionalReducer = require('./ConditionalReducer');
+import ConditionalReducer from './ConditionalReducer';
 
 describe(
 	'reducer-patterns/ConditionalReducer',

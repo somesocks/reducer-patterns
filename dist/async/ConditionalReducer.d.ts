@@ -1,13 +1,8 @@
-"use strict";
-function defaultCondition(state, action) {
-    return true;
-}
-function defaultAction(state, action) {
-    return state;
-}
+declare function defaultCondition(state: any, action: any): Promise<boolean>;
+declare function defaultAction(state: any, action: any): Promise<any>;
 /**
 * ```javascript
-*  let ConditionalReducer = require('reducer-patterns/ConditionalReducer');
+*  let ConditionalReducer = require('reducer-patterns/async/ConditionalReducer');
 *
 *  let state = {
 *    a: 1,
@@ -53,14 +48,7 @@ function defaultAction(state, action) {
 * @param {function} onTrue - reducer to run if true.
 * @param {function} onFalse - reducer to run if false.
 * @returns {function}
-* @memberof reducer-patterns
+* @memberof reducer-patterns.async
 */
-function ConditionalReducer(condition, onTrue, onFalse) {
-    if (condition === void 0) { condition = defaultCondition; }
-    if (onTrue === void 0) { onTrue = defaultAction; }
-    if (onFalse === void 0) { onFalse = defaultAction; }
-    return function _conditionalReducerInstance(state, action) {
-        return condition(state, action) ? onTrue(state, action) : onFalse(state, action);
-    };
-}
-module.exports = ConditionalReducer;
+declare function ConditionalReducer(condition?: typeof defaultCondition, onTrue?: typeof defaultAction, onFalse?: typeof defaultAction): (state: any, action: any) => Promise<any>;
+export = ConditionalReducer;
